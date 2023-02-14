@@ -1,8 +1,6 @@
-from funciones import huevo
-
-
+from funciones import menu
 import json
-
+opcion_elegida=0
 
 with open('pokedex.json', 'r') as pokedex:
     lista_juegos = json.load(pokedex)
@@ -10,6 +8,27 @@ with open('pokedex.json', 'r') as pokedex:
     # print(lista_juegos['pokemon'])
     for i in lista_juegos['pokemon']:
         print(i['id'])  
+
+
+while opcion_elegida != 6 :
+    #Menu para elegir opccion
+    opcion_elegida=menu()
+    
+    #Añadir al diccionario
+    if opcion_elegida == 1:
+        print("a")
+    #Muestra el resultado de un partido pidiendo la fecha y el equipo local si no existe da un error
+    elif opcion_elegida == 2:
+        print("a")
+    #Eliminar partido 
+    elif opcion_elegida == 3:
+        print("a")
+    #listar_equipos
+    elif opcion_elegida == 4:
+        print("a")
+    #estadisticas 
+    elif opcion_elegida == 5:
+        print("a")
 
 # Debes buscar en internet un fichero JSON del cual vas a extraer información. Intenta buscar un fichero con contenido real, 
 # que no sea un ejemplo. Busca un fichero relacionado con algún tema que te interese.
