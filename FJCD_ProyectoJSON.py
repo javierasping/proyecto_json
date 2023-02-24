@@ -1,4 +1,4 @@
-from funciones import menu,listarPokemon,TotalPokemonTipos,BuscarPorTipoPeso
+from funciones import menu,listarPokemon,TotalPokemonTipos,BuscarPorTipoPeso,BuscarEvolucionDebilidades
 import json
 opcion_elegida=0
 
@@ -24,9 +24,9 @@ while opcion_elegida != 6 :
 
     elif opcion_elegida == 3:
         BuscarPorTipoPeso(lista_pokemon)
-    # 4. Introduciendo el id de un poquemon te busque sus evoluciones y te indique su nombre y sus debilidades 
+    # 4. Introduciendo el id de un poquemon te busque su siguiente evoluciones y te indique su nombre y sus debilidades 
     elif opcion_elegida == 4:
-        print("a")
+        BuscarEvolucionDebilidades(lista_pokemon)
     # 5. Pide la altura , peso y tipo mostrandote el nombre de los que cumplan las tres condiciones y el nombre de sus evoluciones si es que las tiene
     elif opcion_elegida == 5:
         print("a")
@@ -34,5 +34,5 @@ while opcion_elegida != 6 :
 # 1. Lista los nombres de los pokemons y el numero de id en la pokedex
 # 2. Muestra el total de pokemons de un determinado tipo (El usuario lo introduce)
 # 3. Pide al usuario el tipo de un pokemon y un limite superior en el peso . Mostrandote una lista de los nombrs que cumplen la condicion 
-# 4. Introduciendo el id de un poquemon te busque sus evoluciones y te indique su nombre y sus debilidades 
+# 4. Introduciendo el id de un poquemon te busque su siguiente evoluciones y te indique su nombre y sus debilidades 
 # 5. Pide la altura , peso y tipo mostrandote el nombre de los que cumplan las tres condiciones y el nombre de sus evoluciones si es que las tiene

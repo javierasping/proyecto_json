@@ -40,8 +40,18 @@ def BuscarPorTipoPeso(lista_pokemon):
                      print(i['id'], i['name'],)  
 
 
-                    #  weight_str = pokemon["weight"]  # Acceder al valor de la clave "weight"
-                    # weight_int = int(weight_str.split()[0])  # Convertir de cadena a entero
-                    # print(weight_int)  # Imprimir el peso como entero
-# 4. Introduciendo el id de un poquemon te busque sus evoluciones y te indique su nombre y sus debilidades 
+
+# 4. Introduciendo el id de un poquemon te busque su siguiente evoluciones y te indique su nombre y sus debilidades 
+def BuscarEvolucionDebilidades(lista_pokemon):
+    id_a_buscar=input("Introduce el id del pokemon que desea buscar: ")
+    for i in lista_pokemon['pokemon']:
+        if int(id_a_buscar) == int(i['id']):
+           print("El id que ha introducido corresponde a ",i['id'], i['name'],)  
+           for siguiente_evolucion in i['next_evolution']:
+                print (siguiente_evolucion['name'])
+                for debilidades in lista_pokemon:
+                    # if siguiente_evolucion['name'] == debilidades['name']:
+                        print(debilidades)
+
+               
 # 5. Pide la altura , peso y tipo mostrandote el nombre de los que cumplan las tres condiciones y el nombre de sus evoluciones si es que las tiene
