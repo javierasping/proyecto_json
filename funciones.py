@@ -59,9 +59,23 @@ def BuscarEvolucionDebilidades(lista_pokemon):
            else:
                 print("El pokemon que has introducido no tiene evoluciones")
 
-  
-
-
-
 
 # 5. Pide la altura , peso y tipo mostrandote el nombre de los que cumplan las tres condiciones y el nombre de sus evoluciones si es que las tiene
+def BuscarEvolucionConAlturaPesoyTipo(lista_pokemon):
+    AlturaaBuscar=input("Introduce la altura minima que tiene que tener el pokemon que desea buscar: ")
+    PesoaBuscar=input("Introduce el peso minimo que tiene que tener el pokemon que desea buscar: ")
+    TipoaBuscar=input("Introduce el tipo que tiene que tener el pokemon que desea buscar ")
+    for i in lista_pokemon['pokemon']:
+        pokemon_buscado=i
+        for tipo in i['type']:
+            if i['height'] >= AlturaaBuscar and i['weight'] >= PesoaBuscar and  tipo == TipoaBuscar :
+                if 'next_evolution' in pokemon_buscado :
+                    print(40*'*')
+                    print("Las evoluciones de " ,i['name'],"son : ")  
+                    for siguiente_evolucion in i['next_evolution'] :
+                            print (siguiente_evolucion['name'])
+                else:
+                    print(40*'*')
+                    print(i['name']," no tiene evoluciones ")
+
+
