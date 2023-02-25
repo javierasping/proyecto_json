@@ -46,12 +46,22 @@ def BuscarEvolucionDebilidades(lista_pokemon):
     id_a_buscar=input("Introduce el id del pokemon que desea buscar: ")
     for i in lista_pokemon['pokemon']:
         if int(id_a_buscar) == int(i['id']):
-           print("El id que ha introducido corresponde a ",i['id'], i['name'],)  
-           for siguiente_evolucion in i['next_evolution']:
-                print (siguiente_evolucion['name'])
-                for debilidades in lista_pokemon:
-                    # if siguiente_evolucion['name'] == debilidades['name']:
-                        print(debilidades)
+           print("El id que ha introducido corresponde a ", i['name'],)
+           pokemon_buscado=i
+           if 'next_evolution' in pokemon_buscado :  
+            for siguiente_evolucion in i['next_evolution'] :
+                    print(40*'*')
+                    print (siguiente_evolucion['name'], "y sus debilidades son : ")
+                    for debilidades in lista_pokemon['pokemon']:
+                        if siguiente_evolucion['name'] == debilidades['name']:
+                                for weaknesses in debilidades['weaknesses']:
+                                    print(weaknesses)
+           else:
+                print("El pokemon que has introducido no tiene evoluciones")
 
-               
+  
+
+
+
+
 # 5. Pide la altura , peso y tipo mostrandote el nombre de los que cumplan las tres condiciones y el nombre de sus evoluciones si es que las tiene
